@@ -35,9 +35,7 @@ roslaunch robile_gazebo 4_wheel_platform.launch use_kelo_tulip:=false
 
 This will launch the robile in simulation. Now we will launch the navigation stack to localize in the map
 
-
 ~~~ sh
 roslaunch robile_navigation navigation.launch
 ~~~
-
 
