@@ -1,25 +1,18 @@
 <?xml version="1.0"?>
-<package format="2">
+<package format="3">
   <name>robile_navigation</name>
-  <version>1.0.0</version>
+  <version>0.0.0</version>
   <description>The robile_navigation package</description>
 
   <maintainer email="deebuls@gmail.com">Deebul Nair</maintainer>
   <license>Apache License 2.0</license>
   <author email="deebuls@gmail.com">Deebul Nair</author>
-
-  <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>amcl</build_depend>
-  <build_depend>map_server</build_depend>
-  <build_depend>move_base</build_depend>
-  <build_export_depend>amcl</build_export_depend>
-  <build_export_depend>map_server</build_export_depend>
-  <build_export_depend>move_base</build_export_depend>
-  <exec_depend>amcl</exec_depend>
-  <exec_depend>map_server</exec_depend>
-  <exec_depend>move_base</exec_depend>
-  <exec_depend>base_local_planner</exec_depend>
-  <exec_depend>dwa_local_planner</exec_depend>
-
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>nav2_bringup</exec_depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+    <exec_depend>nav2_bringup</exec_depend>
+    <exec_depend>slam_toolbox</exec_depend>
+  </export>
 
 </package>
