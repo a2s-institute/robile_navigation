@@ -1,28 +1,31 @@
 # robile_navigation
 Navigation launch files for robile in gazebo and real robot with ROS2
 
-##TODO change the below to ros2
 ## Instalation
 
 This package depends on the robile packages and different ros navigation packages for the launch files to run.
 
-1. [Robile Description]()
-2. [Robile Gazebo]()
+1. [Robile Description](https://github.com/mas-group/robile_description/tree/ros2_humble)
+2. [Robile Gazebo](https://github.com/mas-group/robile_gazebo/tree/ros2_humble)
 
-Follow the [robile_gazebo]() instalation instructions and install the apt packages required for gazebo and launching robot in gazebo.
+Follow the [robile_gazebo](https://github.com/mas-group/robile_gazebo/tree/ros2_humble) instalation instructions and install the apt packages required for gazebo and launching robot in gazebo.
 Here we install packages required for navigation.
 ~~~ sh
-sudo apt install ros-$ROS_DISTRO-gazebo-ros-pkgs ros-$ROS_DISTRO-gmapping ros-$ROS_DISTRO-amcl ros-$ROS_DISTRO-map-server ros-$ROS_DISTRO-move-base ros-$ROS_DISTRO-dwa-local-planner
 
-cd ~/catkin_ws/src
+cd ~/ros2_ws/src
 git clone https://github.com/mas-group/robile_description.git
 git clone https://github.com/mas-group/robile_gazebo.git
 git clone https://github.com/mas-group/robile_navigation.git
-git clone https://github.com/mas-group/robile_slam.git
 
-catkin build robile_description robile_gazebo
-catkin build
-source ~/catkin_ws/devel/setup.bash
+
+cd ~/ros2_ws  #Very important to do below command only from worspace folder and always
+sudo rosdep init
+rosdep update
+rosdep install -i --from-path src --rosdistro humble -y
+
+colcon build robile_description robile_gazebo
+colcon build
+source ~/ros2_ws/devel/setup.bash
 ~~~
 
 ## Usage
@@ -30,7 +33,7 @@ source ~/catkin_ws/devel/setup.bash
 To start the gazebo simulator, use one of the launch files defined in the [launch/](launch/) directory as follows:
 
 ~~~ sh
-roslaunch robile_gazebo 4_wheel_platform.launch use_kelo_tulip:=false
+roslaunch robile_gazebo 4_wheel_platform.launch 
 ~~~
 
 This will launch the robile in simulation. Now we will launch the navigation stack to localize in the map
