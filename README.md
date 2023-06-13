@@ -13,9 +13,10 @@ Here we install packages required for navigation.
 ~~~ sh
 
 cd ~/ros2_ws/src
-git clone https://github.com/mas-group/robile_description.git
-git clone https://github.com/mas-group/robile_gazebo.git
-git clone https://github.com/mas-group/robile_navigation.git
+git clone https://github.com/mas-group/robile_description.git -b ros2_humble
+git clone https://github.com/mas-group/robile_gazebo.git -b ros2_humble
+git clone https://github.com/mas-group/robile_navigation.git -b ros2
+
 
 
 cd ~/ros2_ws  #Very important to do below command only from worspace folder and always
