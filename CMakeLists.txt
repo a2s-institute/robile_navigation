@@ -1,75 +1,18 @@
-cmake_minimum_required(VERSION 3.0.2)
+cmake_minimum_required(VERSION 3.8)
 project(robile_navigation)
 
-find_package(catkin REQUIRED COMPONENTS
-	  amcl
-	  map_server
-	  move_base
-)
-###################################
-## catkin specific configuration ##
-###################################
-catkin_package()
+# find dependencies
+find_package(ament_cmake REQUIRED)
 
-###########
-## Build ##
-###########
-include_directories(
-	# include
-	  ${catkin_INCLUDE_DIRS}
+################################################################################
+# Install
+################################################################################
+
+install(DIRECTORY launch config maps rviz
+	DESTINATION share/${PROJECT_NAME}
 )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+################################################################################
+# Macro for ament package
+################################################################################
+ament_package()
