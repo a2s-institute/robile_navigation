@@ -1,7 +1,7 @@
 # robile_navigation
-Navigation launch files for robile in gazebo and real robot
+Navigation launch files for robile in gazebo and real robot with ROS2
 
-
+##TODO change the below to ros2
 ## Instalation
 
 This package depends on the robile packages and different ros navigation packages for the launch files to run.
