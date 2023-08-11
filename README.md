@@ -1,5 +1,5 @@
 # robile_navigation
-Navigation launch files for robile in gazebo and real robot with ROS2
+Navigation launch files for robile in gazebo and real robot with ROS2. Also supports multi robile navigation.
 
 ## Instalation
 
@@ -31,15 +31,29 @@ source ~/ros2_ws/devel/setup.bash
 
 ## Usage
 
+### Single Robile 
 To start the gazebo simulator, use one of the launch files defined in the [launch/](launch/) directory as follows:
 
 ~~~ sh
-roslaunch robile_gazebo 4_wheel_platform.launch 
+roslaunch robile_gazebo single_robile_sim.launch.py
 ~~~
 
 This will launch the robile in simulation. Now we will launch the navigation stack to localize in the map
 
 ~~~ sh
-roslaunch robile_navigation navigation.launch
+roslaunch robile_navigation single_robile_nav2_bringup.launch.py
+~~~
+
+### Multiple Robiles
+To start the gazebo simulator with multiple Robiles, use one of the launch files defined in the [launch/](launch/) directory as follows:
+
+~~~ sh
+roslaunch robile_gazebo multi_robile_sim.launch.py
+~~~
+
+This will launch the robile in simulation. Now we will launch the navigation stack to localize in the map
+
+~~~ sh
+roslaunch robile_navigation multi_nav2_bringup.launch.py
 ~~~
 
