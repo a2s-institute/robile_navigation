@@ -24,7 +24,7 @@ sudo rosdep init
 rosdep update
 rosdep install -i --from-path src --rosdistro humble -y
 
-colcon build robile_description robile_gazebo
+colcon build --packages-select robile_description robile_gazebo
 colcon build
 source ~/ros2_ws/devel/setup.bash
 ~~~
@@ -35,25 +35,25 @@ source ~/ros2_ws/devel/setup.bash
 To start the gazebo simulator, use one of the launch files defined in the [launch/](launch/) directory as follows:
 
 ~~~ sh
-roslaunch robile_gazebo single_robile_sim.launch.py
+ros2 launch robile_gazebo single_robile_sim.launch.py
 ~~~
 
 This will launch the robile in simulation. Now we will launch the navigation stack to localize in the map
 
 ~~~ sh
-roslaunch robile_navigation single_robile_nav2_bringup.launch.py
+ros2 launch robile_navigation single_robile_nav2_bringup.launch.py
 ~~~
 
 ### Multiple Robiles
 To start the gazebo simulator with multiple Robiles, use one of the launch files defined in the [launch/](launch/) directory as follows:
 
 ~~~ sh
-roslaunch robile_gazebo multi_robile_sim.launch.py
+ros2 launch robile_gazebo multi_robile_sim.launch.py
 ~~~
 
 This will launch the robile in simulation. Now we will launch the navigation stack to localize in the map
 
 ~~~ sh
-roslaunch robile_navigation multi_nav2_bringup.launch.py
+ros2 launch robile_navigation multi_nav2_bringup.launch.py
 ~~~
 
